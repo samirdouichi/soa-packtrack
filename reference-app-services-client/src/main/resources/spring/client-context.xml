@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml"/>
+
+    <jaxws:client id="equipementClient"
+                  serviceClass="com.sjo.services.EquipementSer"
+                  xmlns:e="http://sjo.com/services"
+                  serviceName="e:EquipementSer"
+                  wsdlLocation="xml/equipementservices.wsdl" />
+
+    <jaxws:client id="productClient"
+                  serviceClass="com.sjo.services.ProductService"
+                  xmlns:e="http://sjo.com/services"
+                  serviceName="e:ProductService"
+                  wsdlLocation="xml/productservices.wsdl" />
+</beans>

@@ -1,0 +1,9 @@
+INDEX VERSION 1.122+C:\projet_spring\apr\8.0\soa-packtrack\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+520285585.index
+2387621978.index
+40126642.index
+1568066094.index
+494952723.index
+1428866844.index
+1822736484.index
+1659206024.index

@@ -1,0 +1,17 @@
+INDEX VERSION 1.126
+C:\projet_spring\apr\8.0\soa-packtrack\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2102976330.index
+\reference-app-ui-web\src\main\java
+C:\projet_spring\apr\8.0\soa-packtrack\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\722658894.index
+\reference-app-ui-web\src\main\java
+C:\projet_spring\apr\8.0\soa-packtrack\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\320595661.index
+\prime-showcase-1.0.0-SNAPSHOT\src
+C:\projet_spring\apr\8.0\soa-packtrack\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4262173309.index
+\prime-showcase-1.0.0-SNAPSHOT\src
+C:\projet_spring\apr\8.0\soa-packtrack\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1582522387.index
+\prime-showcase-1.0.0-SNAPSHOT\src
+C:\projet_spring\apr\8.0\soa-packtrack\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1301464216.index
+\reference-app-ui-web\src\main\java
+C:\projet_spring\apr\8.0\soa-packtrack\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\951741972.index
+\reference-app-ui-web\src\main\java
+C:\projet_spring\apr\8.0\soa-packtrack\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1967008791.index
+\prime-showcase-1.0.0-SNAPSHOT\src

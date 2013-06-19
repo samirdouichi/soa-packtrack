@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.sjo.dao.jdbc.AgenceDao"/>
+<fullyQualifiedTypeName name="com.sjo.dao.jdbc.EquipementDao"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.sjo.dao.jdbc.MoyenDeTransportDao"/>
+<fullyQualifiedTypeName name="com.sjo.dao.jdbc.OrganismeTransportDao"/>
+<fullyQualifiedTypeName name="com.sjo.dao.jdbc.TypeMoyenTransportDao"/>
+<fullyQualifiedTypeName name="com.sjo.services.AgenceSer"/>
+<fullyQualifiedTypeName name="com.sjo.services.TypeMoyenTransportSer"/>
+<fullyQualifiedTypeName name="com.sjo.services.OrganismeTransportSer"/>
+<fullyQualifiedTypeName name="com.sjo.services.MoyenDeTransportSer"/>
+<fullyQualifiedTypeName name="com.sun.xml.bind.v2.schemagen.xmlschema.List"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.sjo.services.EquipementSer"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.sjo.model.ressource.Equipement"/>
+</qualifiedTypeNameHistroy>

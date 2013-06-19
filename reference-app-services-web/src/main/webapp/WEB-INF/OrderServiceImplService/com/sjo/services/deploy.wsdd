@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from OrderServiceImplService WSDL service -->
+
+  <service name="OrderServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://services.sjo.com"/>
+      <parameter name="wsdlServiceElement" value="OrderServiceImplService"/>
+      <parameter name="schemaQualified" value="http://xml.apache.org/xml-soap,http://services.sjo.com,http://model.sjo.com"/>
+      <parameter name="wsdlServicePort" value="OrderServiceImpl"/>
+      <parameter name="className" value="com.sjo.services.OrderServiceImpl"/>
+      <parameter name="wsdlPortType" value="OrderServiceImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://services.sjo.com" xmlns:retNS="http://services.sjo.com" xmlns:rtns="http://model.sjo.com" name="submitOrder" qname="operNS:submitOrder" returnQName="retNS:submitOrderReturn" returnType="rtns:Order" soapAction="">
+        <parameter xmlns:pns="http://services.sjo.com" xmlns:tns="http://model.sjo.com" qname="pns:order" type="tns:Order"/>
+        <parameter xmlns:pns="http://services.sjo.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:accoutId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://services.sjo.com" xmlns:retNS="http://services.sjo.com" xmlns:rtns="http://model.sjo.com" name="modifyOrder" qname="operNS:modifyOrder" returnQName="retNS:modifyOrderReturn" returnType="rtns:Order" soapAction="">
+        <parameter xmlns:pns="http://services.sjo.com" xmlns:tns="http://model.sjo.com" qname="pns:order" type="tns:Order"/>
+      </operation>
+      <operation xmlns:operNS="http://services.sjo.com" xmlns:retNS="http://services.sjo.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="cancelOrder" qname="operNS:cancelOrder" returnQName="retNS:cancelOrderReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://services.sjo.com" xmlns:tns="http://model.sjo.com" qname="pns:order" type="tns:Order"/>
+      </operation>
+      <operation xmlns:operNS="http://services.sjo.com" xmlns:retNS="http://services.sjo.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getOrderStatus" qname="operNS:getOrderStatus" returnQName="retNS:getOrderStatusReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://services.sjo.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:orderId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://services.sjo.com" xmlns:retNS="http://services.sjo.com" xmlns:rtns="http://services.sjo.com" xmlns:tns="http://services.sjo.com" name="retrieveOrdersforAccount" qname="operNS:retrieveOrdersforAccount" returnQName="retNS:retrieveOrdersforAccountReturn" returnType="rtns:ArrayOf_xsd_anyType" returnItemQName="tns:item" soapAction="">
+        <parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" xmlns:pns="http://services.sjo.com" qname="pns:accountId" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="submitOrder retrieveOrdersforAccount getOrderStatus cancelOrder modifyOrder"/>
+
+      <typeMapping xmlns:ns="http://services.sjo.com" qname="ns:&gt;retrieveOrdersforAccountResponse" type="java:com.sjo.services.RetrieveOrdersforAccountResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://services.sjo.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.sjo.com" qname="ns:&gt;retrieveOrdersforAccount" type="java:com.sjo.services.RetrieveOrdersforAccount" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.sjo.com" qname="ns:&gt;getOrderStatusResponse" type="java:com.sjo.services.GetOrderStatusResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.sjo.com" qname="ns:Address" type="java:com.sjo.model.Address" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.sjo.com" qname="ns:&gt;cancelOrderResponse" type="java:com.sjo.services.CancelOrderResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.sjo.com" qname="ns:&gt;submitOrder" type="java:com.sjo.services.SubmitOrder" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.sjo.com" qname="ns:&gt;submitOrderResponse" type="java:com.sjo.services.SubmitOrderResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.sjo.com" qname="ns:CreditCard" type="java:com.sjo.model.CreditCard" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.sjo.com" qname="ns:&gt;modifyOrder" type="java:com.sjo.services.ModifyOrder" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.sjo.com" qname="ns:&gt;getOrderStatus" type="java:com.sjo.services.GetOrderStatus" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.sjo.com" qname="ns:Account" type="java:com.sjo.model.Account" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.sjo.com" qname="ns:Order" type="java:com.sjo.model.Order" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.sjo.com" qname="ns:&gt;cancelOrder" type="java:com.sjo.services.CancelOrder" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.sjo.com" qname="ns:&gt;modifyOrderResponse" type="java:com.sjo.services.ModifyOrderResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

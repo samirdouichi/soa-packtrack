@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sjo.jpacktracke</groupId>
+    <artifactId>reference-app-services-web</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>jpacktrack Spring-CXF Services</name>
+    <parent>
+        <groupId>com.sjo.jpacktracke</groupId>
+        <artifactId>reference-app</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <build>
+        <finalName>reference-app-services</finalName>
+        <plugins>
+<!--
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <schemaDirectory>${basedir}/src/main/resources/xml</schemaDirectory>
+                    <packageName>com.sf.icp.model.generated</packageName>
+                    <outputDirectory>${basedir}/../reference-app-model/src/main/generated</outputDirectory>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.sun.tools.xjc.maven2</groupId>
+                <artifactId>maven-jaxb-plugin</artifactId>
+                <version>1.1.1</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <removeOldOutput>true</removeOldOutput>
+                    <includeSchemas>
+                        <includeSchema>xml/jpacktrack.xsd</includeSchema>
+                    </includeSchemas>
+                </configuration>
+            </plugin>
+    -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <!-- also create a jar file that other sub-projects can use as a dependency -->
+                    <archiveClasses>true</archiveClasses>
+                    <attachClasses>true</attachClasses>
+                </configuration>
+                <version>2.2</version>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>com.sjo.jpacktracke</groupId>
+            <artifactId>reference-app-services-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</project>

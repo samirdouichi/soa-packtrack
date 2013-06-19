@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+    <display-name>cxf</display-name>
+
+    <servlet>
+        <servlet-name>cxf</servlet-name>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+    	<display-name>Apache-Axis Servlet</display-name>
+    	<servlet-name>AxisServlet</servlet-name>
+    	<servlet-class>org.apache.axis.transport.http.AxisServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<display-name>Axis Admin Servlet</display-name>
+    	<servlet-name>AdminServlet</servlet-name>
+    	<servlet-class>org.apache.axis.transport.http.AdminServlet</servlet-class>
+    	<load-on-startup>100</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>cxf</servlet-name>
+        <url-pattern>/services/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>AxisServlet</servlet-name>
+    	<url-pattern>/servlet/AxisServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>AxisServlet</servlet-name>
+    	<url-pattern>*.jws</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>AxisServlet</servlet-name>
+    	<url-pattern>/services/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>AdminServlet</servlet-name>
+    	<url-pattern>/servlet/AdminServlet</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/application-context.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
+</web-app>

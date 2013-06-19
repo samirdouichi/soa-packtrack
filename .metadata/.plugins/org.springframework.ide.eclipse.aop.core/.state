@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="reference-app-services-client"/>
+<aop-project name="reference-app-ui-web"/>
+<aop-project name="reference-app-services-mule"/>
+<aop-project name="reference-app-services-web"/>
+<aop-project name="reference-app-services-gemfire"/>
+<aop-project name="reference-app-services-model"/>
+</aop-reference-model>
