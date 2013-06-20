@@ -5,7 +5,6 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.sjo.model.ressource.Equipement;
 import com.sjo.model.ressource.MoyenDeTransport;
 
 

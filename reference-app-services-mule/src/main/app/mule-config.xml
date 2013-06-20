@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mule xmlns="http://www.mulesoft.org/schema/mule/core"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns:spring="http://www.springframework.org/schema/beans"
-      xmlns:http="http://www.mulesoft.org/schema/mule/http"
-      xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+      xmlns:ajax="http://www.mulesoft.org/schema/mule/ajax"
+      xmlns:quartz="http://www.mulesoft.org/schema/mule/quartz"
       xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-        http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
-        http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.1/mule-http.xsd
-        http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.1/mule-vm.xsd">
-    <description>
-    This configuration uses an HTTP endpoint to receive requests.
-    </description>
+        http://www.mulesoft.org/schema/mule/quartz http://www.mulesoft.org/schema/mule/quartz/3.3/mule-quartz.xsd
+        http://www.mulesoft.org/schema/mule/ajax http://www.mulesoft.org/schema/mule/ajax/3.3/mule-ajax.xsd
+        http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.3/mule.xsd">
 
+    <ajax:connector name="ajaxServer" serverUrl="http://0.0.0.0:8081/services/gps" resourceBase="${app.home}/docroot"/>
 
+    <flow name="StrollerService">
+        <quartz:inbound-endpoint repeatInterval="3000" startDelay="3000" jobName="walkGenerator">
+            <quartz:event-generator-job/>
+        </quartz:inbound-endpoint>
+        <component>
+            <singleton-object class="com.sjo.esb.ser.impl.CityStroller"/>
+        </component>
+        <ajax:outbound-endpoint channel="/gpswalker"/>
+    </flow>
 </mule>
+
