@@ -2,6 +2,7 @@ package com.sjo.model.ressource;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -13,27 +14,32 @@ import javax.xml.bind.annotation.XmlType;
  * @created 17-Jun-2013 8:11:58 PM
  */
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Equipement", propOrder = { "equipementID", "origineFabriquant",
-		"refFabriquant", "numSerie", "m_Equipement" })
-@XmlRootElement(name = "Equipement", namespace = "http://pets.acme.com/schemas/jpetstore")
+@Entity
 public class Equipement implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@XmlElement(name = "equipementID", required = true)
-	protected String equipementID;
-	@XmlElement(name = "origineFabriquant", required = true)
-	protected String origineFabriquant;
-	@XmlElement(name = "refFabriquant", required = true)
-	protected String refFabriquant;
-	@XmlElement(name = "numSerie", required = true)
-	protected String numSerie;
-	
+
+	private String equipementID;
+
+	private String origineFabriquant;
+
+	private String refFabriquant;
+
+	private String numSerie;
 
 	public Equipement() {
 
+	}
+
+	public Equipement(String equipementID, String origineFabriquant,
+			String refFabriquant, String numSerie) {
+		super();
+		this.equipementID = equipementID;
+		this.origineFabriquant = origineFabriquant;
+		this.refFabriquant = refFabriquant;
+		this.numSerie = numSerie;
 	}
 
 	public String getEquipementID() {
@@ -48,13 +54,9 @@ public class Equipement implements Serializable {
 
 	}
 
-	 
-
 	/**
  * 
  */
-
-	 
 
 	public String getOrigineFabriquant() {
 		return origineFabriquant;
@@ -79,7 +81,5 @@ public class Equipement implements Serializable {
 	public void setNumSerie(String numSerie) {
 		this.numSerie = numSerie;
 	}
-
-	 
 
 }

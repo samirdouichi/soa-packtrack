@@ -2,50 +2,38 @@ package com.sjo.model.ressource;
 
 import java.io.Serializable;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.persistence.Entity;
+
+
 
 /**
  * @version 1.0
  * @created 17-Jun-2013 8:12:03 PM
  */
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "MoyenDeTransport", propOrder = { 
-		"moyenDeTransportID",
-		"immatriculation",
-		"isDisponible",
-		"chargeMax", 
-		"kilometrage",
-		"chargeMin",
-		"m_Equipement", 
-		"m_TypeMoyenTransport" })
-@XmlRootElement(name = "MoyenDeTransport", namespace = "http://pets.acme.com/schemas/jpetstore")
+@Entity
 public class MoyenDeTransport implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@XmlElement(name = "moyenDeTransportID", required = true)
-	protected String moyenDeTransportID;
-	@XmlElement(name = "immatriculation", required = true)
-	protected String immatriculation;
-	@XmlElement(name = "isDisponible", required = true)
-	protected boolean isDisponible;
-	@XmlElement(name = "chargeMax", required = true)
-	protected int chargeMax;
-	@XmlElement(name = "kilometrage", required = true)
-	protected int kilometrage;
-	@XmlElement(name = "chargeMin", required = true)
-	protected int chargeMin;
-	@XmlElement(name = "m_Equipement", required = true)
-	protected Equipement m_Equipement;
-	@XmlElement(name = "typeMoyenTransportID", required = true)
-	protected TypeMoyenTransport typeMoyenTransportID;
+	 
+	private String moyenDeTransportID;
+	 
+	private String immatriculation;
+	 
+	private boolean isDisponible;
+	 
+	private int chargeMax;
+	 
+	private int kilometrage;
+	 
+	private int chargeMin;
+	 
+	private Equipement m_Equipement;
+	 
+	private TypeMoyenTransport typeMoyenTransportID;
 
 	public MoyenDeTransport() {
 

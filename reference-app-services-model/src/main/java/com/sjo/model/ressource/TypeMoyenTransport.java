@@ -2,12 +2,15 @@ package com.sjo.model.ressource;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+
 
 
 /**
  * @version 1.0
  * @created 17-Jun-2013 8:12:14 PM
  */
+@Entity
 public class TypeMoyenTransport implements Serializable{
 	/**
 	 * 

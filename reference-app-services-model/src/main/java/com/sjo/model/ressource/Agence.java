@@ -3,17 +3,21 @@ package com.sjo.model.ressource;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
+
 /**
  * @version 1.0
  * @created 17-Jun-2013 8:11:53 PM
  */
+
+@Entity
 public class Agence implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String id;
+	private String agenceID;
 	private String adresseAgence;
 	private Date dateCreation;
 	private Agence m_Agence;
@@ -21,6 +25,16 @@ public class Agence implements Serializable {
 
 	public Agence() {
 
+	}
+
+	public Agence(String agenceID, String adresseAgence, Date dateCreation,
+			Agence m_Agence, MoyenDeTransport m_MoyenDeTransport) {
+		super();
+		this.agenceID = agenceID;
+		this.adresseAgence = adresseAgence;
+		this.dateCreation = dateCreation;
+		this.m_Agence = m_Agence;
+		this.m_MoyenDeTransport = m_MoyenDeTransport;
 	}
 
 	public void finalize() throws Throwable {
@@ -51,12 +65,14 @@ public class Agence implements Serializable {
 		m_MoyenDeTransport = newVal;
 	}
 
-	public String getId() {
-		return id;
+	
+
+	public String getAgenceID() {
+		return agenceID;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setAgenceID(String agenceID) {
+		this.agenceID = agenceID;
 	}
 
 	public String getAdresseAgence() {
