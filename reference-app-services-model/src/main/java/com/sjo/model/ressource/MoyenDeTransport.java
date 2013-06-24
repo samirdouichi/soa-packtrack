@@ -2,9 +2,10 @@ package com.sjo.model.ressource;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-
-
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @version 1.0
@@ -12,27 +13,28 @@ import javax.persistence.Entity;
  */
 
 @Entity
+@Table(name = "RE_MOYENDETRANSPORT")
 public class MoyenDeTransport implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	 
+	@Id
 	private String moyenDeTransportID;
-	 
+	@Column(name = "immatriculation")
 	private String immatriculation;
-	 
+	@Column(name = "isDisponible")
 	private boolean isDisponible;
-	 
+	@Column(name = "chargeMax")
 	private int chargeMax;
-	 
+	@Column(name = "kilometrage")
 	private int kilometrage;
-	 
+	@Column(name = "chargeMin")
 	private int chargeMin;
-	 
+
 	private Equipement m_Equipement;
-	 
+
 	private TypeMoyenTransport typeMoyenTransportID;
 
 	public MoyenDeTransport() {

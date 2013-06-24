@@ -2,8 +2,16 @@ package com.sjo.model.ressource;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * @version 1.0
@@ -11,61 +19,28 @@ import javax.persistence.Entity;
  */
 
 @Entity
+@Table(name = "RE_AGENCE")
 public class Agence implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name = "agenceID")
+	@GeneratedValue
 	private String agenceID;
+	@Column(name = "adresseAgence")
 	private String adresseAgence;
-	private Date dateCreation;
-	private Agence m_Agence;
-	private MoyenDeTransport m_MoyenDeTransport;
+	@Column(name = "dateCreationAgence")
+	private Date dateCreationAgence;
+
+	private Set<Chauffeur> m_Chauffeur = new HashSet<Chauffeur>();
+	private Set<MoyenDeTransport> m_MoyenDeTransport = new HashSet<MoyenDeTransport>();
 
 	public Agence() {
-
-	}
-
-	public Agence(String agenceID, String adresseAgence, Date dateCreation,
-			Agence m_Agence, MoyenDeTransport m_MoyenDeTransport) {
 		super();
-		this.agenceID = agenceID;
-		this.adresseAgence = adresseAgence;
-		this.dateCreation = dateCreation;
-		this.m_Agence = m_Agence;
-		this.m_MoyenDeTransport = m_MoyenDeTransport;
 	}
-
-	public void finalize() throws Throwable {
-
-	}
-
-	public Agence getAgence() {
-		return m_Agence;
-	}
-
-	/**
-	 * 
-	 * @param newVal
-	 */
-	public void setAgence(Agence newVal) {
-		m_Agence = newVal;
-	}
-
-	public MoyenDeTransport getMoyenDeTransport() {
-		return m_MoyenDeTransport;
-	}
-
-	/**
-	 * 
-	 * @param newVal
-	 */
-	public void setMoyenDeTransport(MoyenDeTransport newVal) {
-		m_MoyenDeTransport = newVal;
-	}
-
-	
 
 	public String getAgenceID() {
 		return agenceID;
@@ -83,32 +58,33 @@ public class Agence implements Serializable {
 		this.adresseAgence = adresseAgence;
 	}
 
-	public Date getDateCreation() {
-		return dateCreation;
+	public Date getDateCreationAgence() {
+		return dateCreationAgence;
 	}
 
-	public void setDateCreation(Date dateCreation) {
-		this.dateCreation = dateCreation;
+	public void setDateCreationAgence(Date dateCreationAgence) {
+		this.dateCreationAgence = dateCreationAgence;
+	}
+	@OneToMany
+    @JoinColumn(name="chauffeurID")
+	public Set<Chauffeur> getM_Chauffeur() {
+		return m_Chauffeur;
 	}
 
-	public Agence getM_Agence() {
-		return m_Agence;
+	public void setM_Chauffeur(Set<Chauffeur> m_Chauffeur) {
+		this.m_Chauffeur = m_Chauffeur;
 	}
 
-	public void setM_Agence(Agence m_Agence) {
-		this.m_Agence = m_Agence;
-	}
+	
 
-	public MoyenDeTransport getM_MoyenDeTransport() {
+	@OneToMany
+    @JoinColumn(name="moyenDeTransportID")
+	public Set<MoyenDeTransport> getM_MoyenDeTransport() {
 		return m_MoyenDeTransport;
 	}
 
-	public void setM_MoyenDeTransport(MoyenDeTransport m_MoyenDeTransport) {
+	public void setM_MoyenDeTransport(Set<MoyenDeTransport> m_MoyenDeTransport) {
 		this.m_MoyenDeTransport = m_MoyenDeTransport;
 	}
-
-	/**
-	 * 
-	 */
 
 }

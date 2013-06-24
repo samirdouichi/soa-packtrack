@@ -1,66 +1,84 @@
 package com.sjo.model.ressource;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * @version 1.0
  * @created 17-Jun-2013 8:12:09 PM
  */
+
+@Entity
+@Table(name = "RE_ORGANISME_TRANSPORT")
 public class OrganismeTransport implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Integer id;
+
+	@Id
+	@Column(name = "organismeTransportID")
+	@GeneratedValue
+	private String organismeTransportID;
+	@Column(name="designiation")
 	private String designiation;
+	@Column(name="adresseOrganisme")
 	private String adresseOrganisme;
+	@Column(name="mailOrganisme")
 	private String mailOrganisme;
-	private Agence m_Agence;
+	
+	private Set<Agence> m_Agence = new HashSet<Agence>();
+	 
 
 	public OrganismeTransport() {
 
 	}
 
-	public OrganismeTransport(Integer id, String designiation,
-			String adresseOrganisme, String mailOrganisme, Agence m_Agence) {
-		super();
-		this.id = id;
-		this.designiation = designiation;
-		this.adresseOrganisme = adresseOrganisme;
-		this.mailOrganisme = mailOrganisme;
-		this.m_Agence = m_Agence;
-	}
-
-	public void finalize() throws Throwable {
-
-	}
-
-	public Agence getAgence() {
+ 
+	@OneToMany
+    @JoinColumn(name="agenceID")
+	public Set<Agence> getM_Agence() {
 		return m_Agence;
 	}
 
-	/**
-	 * 
-	 * @param newVal
-	 */
-	public void setAgence(Agence newVal) {
-		m_Agence = newVal;
+
+
+	public void setM_Agence(Set<Agence> m_Agence) {
+		this.m_Agence = m_Agence;
 	}
 
-	public Integer getId() {
-		return id;
+
+
+	public void setOrganismeTransportID(String organismeTransportID) {
+		this.organismeTransportID = organismeTransportID;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
-	public String getDesigniation() {
-		return designiation;
-	}
 
 	public void setDesigniation(String designiation) {
 		this.designiation = designiation;
+	}
+
+
+
+	public String getOrganismeTransportID() {
+		return organismeTransportID;
+	}
+
+	 
+	 
+
+	public String getDesigniation() {
+		return designiation;
 	}
 
 	public String getAdresseOrganisme() {
@@ -79,14 +97,6 @@ public class OrganismeTransport implements Serializable {
 		this.mailOrganisme = mailOrganisme;
 	}
 
-	public Agence getM_Agence() {
-		return m_Agence;
-	}
+	 
 
-	public void setM_Agence(Agence m_Agence) {
-		this.m_Agence = m_Agence;
-	}
-
-	
-	
 }

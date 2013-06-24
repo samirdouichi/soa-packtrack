@@ -7,7 +7,7 @@
 //import org.springframework.context.support.ClassPathXmlApplicationContext;
 //
 //import com.sjo.model.ressource.Equipement;
-//import com.sjo.services.EquipementSer;
+//import com.sjo.services.EquipementService;
 //
 //public class SampleClient {
 //    public static void main(String args[]) {
@@ -21,7 +21,7 @@
 //    }
 //
 //    private static void dumpEquipement(ApplicationContext context) {
-//        EquipementSer client = (EquipementSer) context.getBean("equipementClient");
+//        EquipementService client = (EquipementService) context.getBean("equipementClient");
 //
 //        List<Equipement> categories = client.findAllEquipement();
 //        System.out.println("Equipement found: " + categories.size());

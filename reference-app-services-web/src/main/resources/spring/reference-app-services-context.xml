@@ -10,11 +10,11 @@
     <import resource="reference-app-dao-context.xml" />
 
     <jaxws:endpoint
-            id="categoryService"
-            implementor="com.sjo.services.CategoryServiceImpl"
+            id="AgenceService"
+            implementor="com.sjo.services.ressource.AgenceServiceImpl"
             bindingUri="http://acme.com/services"
-            wsdlLocation="xml/categoryservices.wsdl"
-            address="/CategoryService">
+            wsdlLocation="xml/agenceservices.wsdl"
+            address="/AgenceService">
     </jaxws:endpoint>
 
     <jaxws:endpoint
@@ -24,16 +24,8 @@
     </jaxws:endpoint>
 
 
-    <jaxws:endpoint
-            id="accountService"
-            implementor="com.sjo.services.AccountServiceImpl"
-            address="/AccountService">
-    </jaxws:endpoint>
 
-    <jaxws:endpoint
-            id="orderService"
-            implementor="com.sjo.services.OrderServiceImpl"
-            address="/OrderService">
-    </jaxws:endpoint>
+
+    
 
 </beans>
