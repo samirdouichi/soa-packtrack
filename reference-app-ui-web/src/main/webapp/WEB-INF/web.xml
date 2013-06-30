@@ -4,6 +4,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" >
 	
+	
+	<!-- Spring Context Configuration' s Path definition -->
+      <context-param>
+         <param-name>contextConfigLocation</param-name>
+         <param-value>
+            /spring/reference-app-services-context.xml
+         </param-value>
+      </context-param>
     <context-param>
         <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
         <param-value>server</param-value>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ressource.services.sjo.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ressource.services.sjo.com" xmlns:intf="http://ressource.services.sjo.com" xmlns:tns1="http://ressource.model.sjo.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ressource.services.sjo.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://ressource.model.sjo.com"/>
+   <element name="addAgence">
+    <complexType>
+     <sequence>
+      <element name="agence" type="tns1:Agence"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="addAgenceResponse">
+    <complexType/>
+   </element>
+   <element name="listAgence">
+    <complexType/>
+   </element>
+   <element name="listAgenceResponse">
+    <complexType>
+     <sequence>
+      <element name="listAgenceReturn" type="impl:ArrayOf_xsd_anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modifyAgence">
+    <complexType>
+     <sequence>
+      <element name="agence" type="tns1:Agence"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modifyAgenceResponse">
+    <complexType>
+     <sequence>
+      <element name="modifyAgenceReturn" type="tns1:Agence"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeAgence">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeAgenceResponse">
+    <complexType/>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://ressource.model.sjo.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://ressource.services.sjo.com"/>
+   <complexType name="Agence">
+    <sequence>
+     <element name="adresseAgence" nillable="true" type="xsd:string"/>
+     <element name="agenceID" nillable="true" type="xsd:string"/>
+     <element name="dateCreationAgence" nillable="true" type="xsd:dateTime"/>
+     <element name="m_Chauffeur" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="m_MoyenDeTransport" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="listAgenceResponse">
+
+      <wsdl:part element="impl:listAgenceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listAgenceRequest">
+
+      <wsdl:part element="impl:listAgence" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addAgenceResponse">
+
+      <wsdl:part element="impl:addAgenceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modifyAgenceRequest">
+
+      <wsdl:part element="impl:modifyAgence" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modifyAgenceResponse">
+
+      <wsdl:part element="impl:modifyAgenceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeAgenceRequest">
+
+      <wsdl:part element="impl:removeAgence" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addAgenceRequest">
+
+      <wsdl:part element="impl:addAgence" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeAgenceResponse">
+
+      <wsdl:part element="impl:removeAgenceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AgenceServiceImpl">
+
+      <wsdl:operation name="addAgence">
+
+         <wsdl:input message="impl:addAgenceRequest" name="addAgenceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addAgenceResponse" name="addAgenceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listAgence">
+
+         <wsdl:input message="impl:listAgenceRequest" name="listAgenceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:listAgenceResponse" name="listAgenceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifyAgence">
+
+         <wsdl:input message="impl:modifyAgenceRequest" name="modifyAgenceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:modifyAgenceResponse" name="modifyAgenceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeAgence">
+
+         <wsdl:input message="impl:removeAgenceRequest" name="removeAgenceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeAgenceResponse" name="removeAgenceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AgenceServiceImplSoapBinding" type="impl:AgenceServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addAgence">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addAgenceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addAgenceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listAgence">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="listAgenceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="listAgenceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifyAgence">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="modifyAgenceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="modifyAgenceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeAgence">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeAgenceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeAgenceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AgenceServiceImplService">
+
+      <wsdl:port binding="impl:AgenceServiceImplSoapBinding" name="AgenceServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/reference-app-services/services/AgenceServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

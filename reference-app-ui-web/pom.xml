@@ -13,7 +13,7 @@
 		<org.slf4j-version>1.6.1</org.slf4j-version>
 	</properties>
     <build> 
-        <finalName>reference-app-web</finalName>
+        <finalName>reference-app-ui-web</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
