@@ -2,14 +2,15 @@
 <!DOCTYPE hibernate-configuration PUBLIC
     "-//Hibernate/Hibernate Configuration DTD//EN"
     "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
-
- 
 <hibernate-configuration>
     <session-factory>
         <mapping class="com.sjo.model.ressource.Agence" />
+        <mapping class="com.sjo.model.ressource.Ressources" />
+        <mapping class="com.sjo.model.ressource.OrganismeTransport" />
         <mapping class="com.sjo.model.ressource.Chauffeur" />
         <mapping class="com.sjo.model.ressource.MoyenDeTransport" />
-        <mapping class="com.sjo.model.ressource.OrganismeDeTransport" />
+        <mapping class="com.sjo.model.ressource.Equipement" />
+        <mapping class="com.sjo.model.ressource.TypeMoyenTransport" />
     </session-factory>
 	    
 </hibernate-configuration>

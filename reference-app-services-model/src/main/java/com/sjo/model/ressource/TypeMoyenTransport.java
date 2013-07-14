@@ -41,9 +41,7 @@ public class TypeMoyenTransport implements Serializable{
 		this.vitesseMaxCharge = vitesseMaxCharge;
 	}
 
-	public void finalize() throws Throwable {
-
-	}
+	
 
 	public Integer getId() {
 		return id;

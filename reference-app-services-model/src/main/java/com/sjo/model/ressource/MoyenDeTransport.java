@@ -2,9 +2,14 @@ package com.sjo.model.ressource;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -21,6 +26,8 @@ public class MoyenDeTransport implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
+	@Column(name = "moyenDeTransportID")
+	@GeneratedValue
 	private String moyenDeTransportID;
 	@Column(name = "immatriculation")
 	private String immatriculation;
@@ -32,10 +39,17 @@ public class MoyenDeTransport implements Serializable {
 	private int kilometrage;
 	@Column(name = "chargeMin")
 	private int chargeMin;
-
+	
 	private Equipement m_Equipement;
-
+	@ManyToOne
+    @JoinColumn(name="resourcesID")
+	private Ressources resources;
+	
+	@OneToOne(mappedBy="typeMoyenTransport", cascade=CascadeType.ALL)
 	private TypeMoyenTransport typeMoyenTransportID;
+	
+	@OneToOne(mappedBy="equipement", cascade=CascadeType.ALL)
+	private Equipement equipement;
 
 	public MoyenDeTransport() {
 
@@ -54,6 +68,23 @@ public class MoyenDeTransport implements Serializable {
 		this.chargeMin = chargeMin;
 		this.m_Equipement = m_Equipement;
 		this.typeMoyenTransportID = typeMoyenTransportID;
+	}
+
+	public MoyenDeTransport(String moyenDeTransportID, String immatriculation,
+			boolean isDisponible, int chargeMax, int kilometrage,
+			int chargeMin, Equipement m_Equipement, Ressources resources,
+			TypeMoyenTransport typeMoyenTransportID, Equipement equipement) {
+		super();
+		this.moyenDeTransportID = moyenDeTransportID;
+		this.immatriculation = immatriculation;
+		this.isDisponible = isDisponible;
+		this.chargeMax = chargeMax;
+		this.kilometrage = kilometrage;
+		this.chargeMin = chargeMin;
+		this.m_Equipement = m_Equipement;
+		this.resources = resources;
+		this.typeMoyenTransportID = typeMoyenTransportID;
+		this.equipement = equipement;
 	}
 
 	public void finalize() throws Throwable {
@@ -76,10 +107,6 @@ public class MoyenDeTransport implements Serializable {
 		this.isDisponible = isDisponible;
 	}
 
-	/**
-	 * 
-	 * @param newVal
-	 */
 	public void setEquipement(Equipement newVal) {
 		m_Equipement = newVal;
 	}
@@ -138,6 +165,14 @@ public class MoyenDeTransport implements Serializable {
 
 	public void setTypeMoyenTransportID(TypeMoyenTransport typeMoyenTransportID) {
 		this.typeMoyenTransportID = typeMoyenTransportID;
+	}
+
+	public Ressources getResources() {
+		return resources;
+	}
+
+	public void setResources(Ressources resources) {
+		this.resources = resources;
 	}
 
 }

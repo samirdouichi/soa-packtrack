@@ -1,7 +1,8 @@
 package com.sjo.model.ressource;
 
 import java.io.Serializable;
-import java.util.Date;
+
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -34,10 +36,15 @@ public class Agence implements Serializable {
 	private String adresseAgence;
 	@Column(name = "dateCreationAgence")
 	private Date dateCreationAgence;
+	
+	@ManyToOne
+    @JoinColumn(name="organismeTransportID")
+	private OrganismeTransport organismeTransport;
+	
 
-	private Set<Chauffeur> m_Chauffeur = new HashSet<Chauffeur>();
-	private Set<MoyenDeTransport> m_MoyenDeTransport = new HashSet<MoyenDeTransport>();
-
+	@OneToMany(mappedBy="ressource")
+	private Set<Ressources> ressources = new HashSet<Ressources>();
+	
 	public Agence() {
 		super();
 	}
@@ -65,26 +72,10 @@ public class Agence implements Serializable {
 	public void setDateCreationAgence(Date dateCreationAgence) {
 		this.dateCreationAgence = dateCreationAgence;
 	}
-	@OneToMany
-    @JoinColumn(name="chauffeurID")
-	public Set<Chauffeur> getM_Chauffeur() {
-		return m_Chauffeur;
-	}
-
-	public void setM_Chauffeur(Set<Chauffeur> m_Chauffeur) {
-		this.m_Chauffeur = m_Chauffeur;
-	}
+	
 
 	
 
-	@OneToMany
-    @JoinColumn(name="moyenDeTransportID")
-	public Set<MoyenDeTransport> getM_MoyenDeTransport() {
-		return m_MoyenDeTransport;
-	}
-
-	public void setM_MoyenDeTransport(Set<MoyenDeTransport> m_MoyenDeTransport) {
-		this.m_MoyenDeTransport = m_MoyenDeTransport;
-	}
+ 
 
 }

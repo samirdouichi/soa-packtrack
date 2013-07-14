@@ -36,32 +36,42 @@ public class OrganismeTransport implements Serializable {
 	@Column(name="mailOrganisme")
 	private String mailOrganisme;
 	
-	private Set<Agence> m_Agence = new HashSet<Agence>();
+	
+	@OneToMany(mappedBy="agences")
+	private Set<Agence> agences = new HashSet<Agence>();
 	 
 
 	public OrganismeTransport() {
 
 	}
 
- 
-	@OneToMany
-    @JoinColumn(name="agenceID")
-	public Set<Agence> getM_Agence() {
-		return m_Agence;
+
+	public OrganismeTransport(String organismeTransportID, String designiation,
+			String adresseOrganisme, String mailOrganisme, Set<Agence> agences) {
+		super();
+		this.organismeTransportID = organismeTransportID;
+		this.designiation = designiation;
+		this.adresseOrganisme = adresseOrganisme;
+		this.mailOrganisme = mailOrganisme;
+		this.agences = agences;
 	}
-
-
-
-	public void setM_Agence(Set<Agence> m_Agence) {
-		this.m_Agence = m_Agence;
-	}
-
 
 
 	public void setOrganismeTransportID(String organismeTransportID) {
 		this.organismeTransportID = organismeTransportID;
 	}
 
+
+	@OneToMany
+    @JoinColumn(name="agenceID")
+	public Set<Agence> getAgences() {
+		return agences;
+	}
+
+
+	public void setAgences(Set<Agence> agences) {
+		this.agences = agences;
+	}
 
 
 	public void setDesigniation(String designiation) {
