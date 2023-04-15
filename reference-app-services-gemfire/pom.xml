@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <spring.version>3.1.1.RELEASE</spring.version>
+        <spring.version>5.2.24.RELEASE</spring.version>
         <commons.daemon>1.0.9</commons.daemon>
     </properties>
 
@@ -45,21 +45,17 @@
                         </goals>
                         <configuration>
                             <transformers>
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
                                     <resource>META-INF/spring.handlers</resource>
                                 </transformer>
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
                                     <resource>META-INF/spring.schemas</resource>
                                 </transformer>
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.XmlAppendingTransformer">
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.XmlAppendingTransformer">
                                     <resource>META-INF/magic.xml</resource>
                                     <!-- Add this to enable loading of DTDs <ignoreDtd>false</ignoreDtd> -->
                                 </transformer>
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>SpringBootLoader</mainClass>
                                 </transformer>
                             </transformers>
