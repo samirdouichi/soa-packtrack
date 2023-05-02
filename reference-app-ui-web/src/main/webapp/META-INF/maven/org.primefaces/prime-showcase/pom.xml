@@ -439,7 +439,7 @@
                 <dependency>
                     <groupId>org.primefaces</groupId>
                     <artifactId>primefaces</artifactId>
-                    <version>3.5-SNAPSHOT</version>
+                    <version>12.0.0</version>
                 </dependency>
                 <dependency>
                     <groupId>org.primefaces</groupId>
@@ -449,7 +449,7 @@
                 <dependency>
                     <groupId>org.glassfish</groupId>
                     <artifactId>javax.faces</artifactId>
-                    <version>2.1.10</version>
+                    <version>2.3.5</version>
                 </dependency>
             </dependencies>
         </profile>
@@ -464,7 +464,7 @@
                 <dependency>
                     <groupId>org.primefaces</groupId>
                     <artifactId>primefaces</artifactId>
-                    <version>3.5-SNAPSHOT</version>
+                    <version>12.0.0</version>
                 </dependency>
                 <dependency>
                     <groupId>org.primefaces</groupId>
@@ -494,7 +494,7 @@
                 <dependency>
                     <groupId>org.primefaces</groupId>
                     <artifactId>primefaces</artifactId>
-                    <version>3.5-SNAPSHOT</version>
+                    <version>12.0.0</version>
                 </dependency>
                 <dependency>
                     <groupId>org.primefaces</groupId>
@@ -504,7 +504,7 @@
                 <dependency>
                     <groupId>org.glassfish</groupId>
                     <artifactId>javax.faces</artifactId>
-                    <version>2.1.10</version>
+                    <version>2.3.5</version>
                     <scope>provided</scope>
                 </dependency>
             </dependencies>
@@ -520,7 +520,7 @@
                 <dependency>
                     <groupId>org.primefaces</groupId>
                     <artifactId>primefaces</artifactId>
-                    <version>3.4</version>
+                    <version>12.0.0</version>
                 </dependency>
                 <dependency>
                     <groupId>org.primefaces</groupId>
@@ -530,7 +530,7 @@
                 <dependency>
                     <groupId>org.glassfish</groupId>
                     <artifactId>javax.faces</artifactId>
-                    <version>2.1.10</version>
+                    <version>2.3.5</version>
                 </dependency>
             </dependencies>
         </profile>
@@ -545,7 +545,7 @@
                 <dependency>
                     <groupId>org.primefaces</groupId>
                     <artifactId>primefaces</artifactId>
-                    <version>3.4-SNAPSHOT</version>
+                    <version>12.0.0</version>
                 </dependency>
                 <dependency>
                     <groupId>org.primefaces</groupId>
@@ -555,7 +555,7 @@
                 <dependency>
                     <groupId>org.glassfish</groupId>
                     <artifactId>javax.faces</artifactId>
-                    <version>2.1.10</version>
+                    <version>2.3.5</version>
                 </dependency>
                 <dependency>
                     <groupId>xalan</groupId>
@@ -622,7 +622,7 @@
                 <dependency>
                     <groupId>org.primefaces</groupId>
                     <artifactId>primefaces</artifactId>
-                    <version>3.5-SNAPSHOT</version>
+                    <version>12.0.0</version>
                 </dependency>
                 <dependency>
                     <groupId>org.primefaces</groupId>
@@ -632,7 +632,7 @@
                 <dependency>
                     <groupId>org.glassfish</groupId>
                     <artifactId>javax.faces</artifactId>
-                    <version>2.1.10</version>
+                    <version>2.3.5</version>
                 </dependency>
             </dependencies>
             <build>
@@ -734,7 +734,7 @@
                 <dependency>
                     <groupId>org.primefaces</groupId>
                     <artifactId>primefaces</artifactId>
-                    <version>3.5-SNAPSHOT</version>
+                    <version>12.0.0</version>
                 </dependency>
                 <dependency>
                     <groupId>org.primefaces</groupId>
@@ -744,7 +744,7 @@
                 <dependency>
                     <groupId>org.glassfish</groupId>
                     <artifactId>javax.faces</artifactId>
-                    <version>2.1.10</version>
+                    <version>2.3.5</version>
                 </dependency>
             </dependencies>
             <build>
