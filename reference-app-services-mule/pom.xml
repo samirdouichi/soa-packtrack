@@ -125,8 +125,7 @@
 						</goals>
 						<configuration>
 							<tasks>
-								<copy file="${project.build.directory}/${build.finalName}.zip"
-									todir="${mule.home}/apps" overwrite="true" />
+								<copy file="${project.build.directory}/${build.finalName}.zip" todir="${mule.home}/apps" overwrite="true"/>
 							</tasks>
 						</configuration>
 					</execution>
@@ -268,7 +267,7 @@
 		<dependency>
 			<groupId>org.mule.transports</groupId>
 			<artifactId>mule-transport-ajax</artifactId>
-			<version>3.4.0</version>
+			<version>3.5.0</version>
 		</dependency>
 	</dependencies>
 
