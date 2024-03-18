@@ -20,7 +20,7 @@
 	</modules>
 
 	<properties>
-		<spring.version>3.1.1.RELEASE</spring.version>
+		<spring.version>5.8.11</spring.version>
 		<cxf.version>2.6.1</cxf.version>
 		<cuke.version>1.0.9</cuke.version>
 	</properties>
